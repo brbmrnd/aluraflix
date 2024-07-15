@@ -1,0 +1,22 @@
+/* src/components/Buttons/Buttons.module.css */
+.btnsContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.buttonSave {
+    padding: 10px 20px;
+    background-color: #007bff; /* Cor do botão save */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonClear {
+    padding: 10px 20px;
+    background-color: #6c757d; /* Cor do botão clear */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

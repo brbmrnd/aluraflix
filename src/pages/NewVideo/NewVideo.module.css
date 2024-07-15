@@ -1,0 +1,76 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+    color: var(--branco);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 19px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--azul);
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; 
+    background-color: var(--cor-fundo); 
+    color: var(--branco); 
+}
+
+.formGroup textarea {
+    height: 100px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.saveButton,
+.resetButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.saveButton {
+    background-color: var(--cor-fundo);
+    color: white;
+    border: 1px solid var(--azul);
+}
+
+.resetButton {
+    background-color: var(--cor-fundo);
+    color: white;
+    border: 1px solid var(--azul);
+}

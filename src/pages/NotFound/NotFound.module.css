@@ -1,0 +1,11 @@
+.container{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.h2{
+    font-size: 60px;
+}

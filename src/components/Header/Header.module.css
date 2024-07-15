@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1em 2em;
+    background-color: var(--preto);   
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.linkLogo {
+    position: relative;
+    border-color: var(--azul);
+}
+
+.link {
+    padding: 1em;
+    border: 2px solid transparent;
+    position: relative;
+    border-color: var(--azul);
+    box-shadow: 0 0 15px var(--azul);
+    border-radius: 12px;
+    display: inline-block;
+}

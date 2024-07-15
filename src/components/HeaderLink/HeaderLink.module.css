@@ -1,0 +1,18 @@
+.link {
+    color: var(--azul);
+    font-size: 18px;
+    font-weight: 400;
+    padding: 1em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    position: relative;
+    border-color: var(--azul);
+    box-shadow: 0 0 15px var(--azul);
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.link:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}

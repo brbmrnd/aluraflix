@@ -1,0 +1,5 @@
+.player {
+    border: 5px solid;
+    box-shadow: 0 0 20px;
+    max-width: 100%;
+}

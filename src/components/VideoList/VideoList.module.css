@@ -1,0 +1,14 @@
+.container {
+    gap: 20px;
+}
+
+.listaVideos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.categoriaSection {
+    margin: 20px 0;
+}

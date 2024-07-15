@@ -1,0 +1,52 @@
+.card {
+    width: 450px;
+    height: auto; 
+    margin: 10px auto; 
+    border: 1px solid #ccc;
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.capa {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 10px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;    
+}
+
+.icon {
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--azul);
+    }
+}

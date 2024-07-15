@@ -1,0 +1,11 @@
+.container {
+    border-radius: 10px;
+    padding: 10px;
+    width: 432px;
+    height: 70px;
+}
+
+.category {
+    padding: 10px;
+    color: #fff;
+}
