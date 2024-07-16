@@ -2,7 +2,7 @@ import React from 'react';
 import db from '../../db.json';
 import { useParams } from 'react-router-dom';
 import Player from 'components/Player';
-import styles from './AboutVideoPage.module.css'
+import styles from './AboutVideo.module.css'
 
 function AboutVideoPage() {
     const { id } = useParams();

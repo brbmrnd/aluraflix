@@ -54,7 +54,6 @@ function Home() {
                     videoData={selectedVideo} 
                 />
             )}
-            )}
         </>
     );
 }

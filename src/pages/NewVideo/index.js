@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import db from '../../db.json';
 import styles from './NewVideo.module.css';
+import ModalAddVideo from 'components/ModalAddVideo';
 
 function NewVideo() {
     const [title, setTitle] = useState('');
@@ -8,6 +9,7 @@ function NewVideo() {
     const [image, setImage] = useState('');
     const [linkVideo, setLinkVideo] = useState('');
     const [description, setDescription] = useState('');
+    const [openNewPage, setOpenNewPage] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +19,7 @@ function NewVideo() {
             category,
             url: linkVideo,
             thumbnail: image,
-            description: description,
+            description,
         };
 
         db.videos.push(newVideo);
@@ -28,6 +30,7 @@ function NewVideo() {
         setImage('');
         setLinkVideo('');
         setDescription('');
+        setOpenNewPage(false);
     };
 
     const handleReset = () => {
@@ -39,9 +42,14 @@ function NewVideo() {
     };
 
     return (
-        <div className={styles.container}>
+
+        <ModalAddVideo isOpen={openNewPage} onClose={() => setOpenNewPage(false)}>
+            <button onClick={() => setOpenNewPage(true)} className={styles.openModalButton}>
+                Adicionar Novo Vídeo
+            </button>
             <h1>Novo Vídeo</h1>
             <p>Complete o formulário para criar um novo card de vídeo.</p>
+
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.formGroup}>
                     <label htmlFor="title">Título</label>
@@ -101,7 +109,7 @@ function NewVideo() {
                     <button type="button" onClick={handleReset} className={styles.resetButton}>Limpar</button>
                 </div>
             </form>
-        </div>
+        </ModalAddVideo>
     );
 }
 

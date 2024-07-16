@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './VideoPlayer.module.css';
+import styles from './BannerPlayer.module.css';
 
-function VideoPlayer({ video, borderColor }) {
+function BannerPlayer({ video, borderColor }) {
     return (
         <iframe
             width="560"
@@ -18,4 +18,4 @@ function VideoPlayer({ video, borderColor }) {
     );
 }
 
-export default VideoPlayer;
+export default BannerPlayer;

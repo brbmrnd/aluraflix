@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './Banner.module.css';
 import useVideoRotation from 'hooks/useVideoRotation';
-import VideoPlayer from '../VideoPlayer';
+import BannerPlayer from '../BannerPlayer';
 import { VideosContext } from 'context/VideoContext';
 
 function Banner() {
@@ -29,7 +29,7 @@ function Banner() {
                             <p className={styles.description}>{currentVideo.description}</p>
                         </div>
                         <div className={styles.playerContainer}>
-                            <VideoPlayer video={currentVideo} borderColor={currentCategory?.cor} />
+                            <BannerPlayer video={currentVideo} borderColor={currentCategory?.cor} />
                         </div>
                     </div>
                 )}
