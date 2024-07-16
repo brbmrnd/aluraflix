@@ -2,28 +2,14 @@ import React, { useState } from 'react';
 import Cards from '../Cards';
 import styles from './VideoList.module.css';
 import db from '../../db.json';
-import ModalEdit from 'components/ModalEdit';
 
-function VideoList({ category }) {
+function VideoList({ category, onEdit}) {
     const [videos, setVideos] = useState(db.videos.filter(video => video.category === category));
-    const [openedEditModal, setOpenedEditModal] = useState(false);
-    const [selectedVideo, setSelectedVideo] = useState(null);
+
 
     const handleDelete = (id) => {
         const updatedVideos = videos.filter(video => video.id !== id);
         setVideos(updatedVideos);
-    };
-
-    const handleEdit = (id) => {
-        const video = videos.find(video => video.id === id);
-        setSelectedVideo(video);
-        setOpenedEditModal(true);
-    };
-
-    const handleSave = (updatedVideo) => {
-        const updatedVideos = videos.map(video => video.id === updatedVideo.id ? updatedVideo : video);
-        setVideos(updatedVideos);
-        setOpenedEditModal(false);
     };
 
     return (
@@ -36,18 +22,10 @@ function VideoList({ category }) {
                         title={video.title}
                         capa={video.thumbnail}
                         onDelete={handleDelete}
-                        onEdit={handleEdit}
+                        onEdit={onEdit}
                     />
                 ))}
             </div>
-            {openedEditModal && (
-                <ModalEdit
-                    isOpen={openedEditModal}
-                    onRequestClose={() => setOpenedEditModal(false)}
-                    onSave={handleSave}
-                    videoData={selectedVideo}
-                />
-            )}
         </div>
     );
 }

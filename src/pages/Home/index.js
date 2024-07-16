@@ -10,9 +10,11 @@ function Home() {
     const [openedEditModal, setOpenedEditModal] = useState(false);
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videos, setVideos] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         setVideos(data.videos);
+        setCategories(data.categories);
     }, []);
 
     const openEditModal = (video) => {
@@ -25,33 +27,45 @@ function Home() {
     };
 
     const handleSave = (updatedVideo) => {
-        const updatedVideos = videos.map(video =>
-            video.id === updatedVideo.id ? updatedVideo : video
-        );
+        const updatedVideos = videos.map(video => video.id === updatedVideo.id ? updatedVideo : video);
         setVideos(updatedVideos);
+        setOpenedEditModal(false);
     };
 
+    const handleEdit = (id) => {
+        const video = videos.find(video => video.id === id);
+        setSelectedVideo(video);
+        setOpenedEditModal(true);
+    };
+
+    const handleDelete = (id) => {
+        const updatedVideos = videos.filter(video => video.id !== id);
+        setVideos(updatedVideos);
+    };
 
     return (
         <>
             <Banner />
             <div className="videos-por-category">
-                {data.categories.map(category => (
+                {categories.map(category => (
                     <div className={styles.container} key={category.id}>
                         <CategoriesList categories={[category]} />
-                        <VideoList 
-                            category={category.name} 
-                            onEdit={(video) => openEditModal(video)}
+                        <VideoList
+                            category={category.name}
+                            onEdit={handleEdit}
+                            onDelete={handleDelete}
                         />
                     </div>
                 ))}
             </div>
+
             {openedEditModal && (
-                <ModalEdit 
-                    isOpen={openedEditModal} 
-                    onRequestClose={closeEditModal} 
-                    onSave={handleSave} 
-                    videoData={selectedVideo} 
+                <ModalEdit
+                    isOpen={openEditModal}
+                    onRequestClose={closeEditModal}
+                    onSave={handleSave}
+                    videoData={selectedVideo}
+                    categories={categories}
                 />
             )}
         </>
