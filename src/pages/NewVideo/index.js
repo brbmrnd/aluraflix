@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import db from '../../db.json';
 import styles from './NewVideo.module.css';
-import ModalAddVideo from 'components/ModalAddVideo';
+import { IoMdArrowBack } from "react-icons/io";
+
 
 function NewVideo() {
     const [title, setTitle] = useState('');
@@ -9,8 +10,7 @@ function NewVideo() {
     const [image, setImage] = useState('');
     const [linkVideo, setLinkVideo] = useState('');
     const [description, setDescription] = useState('');
-    const [openNewPage, setOpenNewPage] = useState(false);
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         const newVideo = {
@@ -30,7 +30,6 @@ function NewVideo() {
         setImage('');
         setLinkVideo('');
         setDescription('');
-        setOpenNewPage(false);
     };
 
     const handleReset = () => {
@@ -42,11 +41,10 @@ function NewVideo() {
     };
 
     return (
-
-        <ModalAddVideo isOpen={openNewPage} onClose={() => setOpenNewPage(false)}>
-            <button onClick={() => setOpenNewPage(true)} className={styles.openModalButton}>
-                Adicionar Novo Vídeo
-            </button>
+        <div className={styles.container}>
+            <a href='./' className={styles.backButton}>
+                <IoMdArrowBack size={24} />
+            </a>
             <h1>Novo Vídeo</h1>
             <p>Complete o formulário para criar um novo card de vídeo.</p>
 
@@ -105,11 +103,11 @@ function NewVideo() {
                     ></textarea>
                 </div>
                 <div className={styles.buttons}>
-                    <button type="submit" className={styles.saveButton}>Salvar</button>
-                    <button type="button" onClick={handleReset} className={styles.resetButton}>Limpar</button>
+                    <button type="submit" className={styles.button}>Salvar</button>
+                    <button type="button" onClick={handleReset} className={styles.button}>Limpar</button>
                 </div>
             </form>
-        </ModalAddVideo>
+        </div>
     );
 }
 

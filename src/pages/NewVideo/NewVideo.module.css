@@ -7,6 +7,10 @@
     color: var(--branco);
 }
 
+.backButton{
+    color: #fff;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -51,25 +55,16 @@ p {
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
+    gap: 16px;
 }
 
-.saveButton,
-.resetButton {
+.button {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.saveButton {
-    background-color: var(--cor-fundo);
-    color: white;
-    border: 1px solid var(--azul);
-}
-
-.resetButton {
     background-color: var(--cor-fundo);
     color: white;
     border: 1px solid var(--azul);
