@@ -3,7 +3,7 @@ import Cards from '../Cards';
 import styles from './VideoList.module.css';
 import db from '../../db.json';
 
-function VideoList({ category, onEdit}) {
+function VideoList({ category, onEdit, color}) {
     const [videos, setVideos] = useState(db.videos.filter(video => video.category === category));
 
 
@@ -23,6 +23,7 @@ function VideoList({ category, onEdit}) {
                         capa={video.thumbnail}
                         onDelete={handleDelete}
                         onEdit={onEdit}
+                        color={color}
                     />
                 ))}
             </div>

@@ -54,6 +54,7 @@ function Home() {
                             category={category.name}
                             onEdit={handleEdit}
                             onDelete={handleDelete}
+                            color={category.cor}
                         />
                     </div>
                 ))}

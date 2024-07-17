@@ -5,9 +5,9 @@ import { MdOutlineEdit } from "react-icons/md";
 import { IoPlayOutline } from "react-icons/io5";
 
 
-function Cards({ id, title, capa, onDelete, onEdit }) {
+function Cards({ id, title, capa, onDelete, onEdit, color }) {
     return (
-        <div className={styles.card}>
+        <div className={styles.card} style={{borderColor: color}} >
             <Link to={`video/${id}`} className={styles.link}>
                 <img src={capa} alt={title} className={styles.capa} />
                 <h2>{title}</h2>
